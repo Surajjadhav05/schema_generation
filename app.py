@@ -6,7 +6,7 @@ import pyTigerGraph as tg
 
 
 with st.sidebar:
-    image = Image.open(r'C:\Users\suraj.jadhav\Documents\TG automatic schema generation\streamlit app\ns_logo.jpg')
+    image = Image.open(r'ns_logo.jpg')
     st.image(image)
     st.header("Automatic Schema Generation")
 

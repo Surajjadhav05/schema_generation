@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 
 @st.cache_resource()
-def load_model(api_token="AIzaSyAc69h0_vY3yDqCgmCXQuZdCWmV7pKObII"):
+def load_model(api_token):
     palm.configure(api_key=api_token)
     return palm
 @st.cache_data()

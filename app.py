@@ -55,28 +55,28 @@ if len(gsql_query)>0:
     text_contents = gsql_query["GSQL_Ouput"]
     output=f"""#Importing libraries
              import pyTigerGraph as tg
-             import json
-             import pandas as pd
-             
-             #Establish the connection with tigergraph
-             
-             hostName = "enter graph url here"
-             userName = "enter user name"
-             passWord = "enter password"
-             graphName="enter graph name"
-             secret="enter secret key for the same graph"
-             conn = tg.TigerGraphConnection(host=hostName,graphname=graphName,tgCloud=True, gsqlSecret=secret)
-             authToken=conn.getToken(secret)
-             authToken=authToken[0]
+import json
+import pandas as pd
 
-             conn = tg.TigerGraphConnection(host=hostName,graphname=graphName,tgCloud=True, gsqlSecret=secret,apiToken=authToken)
+#Establish the connection with tigergraph
 
-             conn.gsql('ls')
-             
-             #Create Schema
-             result=conn.gsql('''Use Specify GraphName
-             {text_contents}''')
-             print(result)
+hostName = "enter graph url here"
+userName = "enter user name"
+passWord = "enter password"
+graphName="enter graph name"
+secret="enter secret key for the same graph"
+conn = tg.TigerGraphConnection(host=hostName,graphname=graphName,tgCloud=True, gsqlSecret=secret)
+authToken=conn.getToken(secret)
+authToken=authToken[0]
+
+conn = tg.TigerGraphConnection(host=hostName,graphname=graphName,tgCloud=True, gsqlSecret=secret,apiToken=authToken)
+
+conn.gsql('ls')
+
+#Create Schema
+result=conn.gsql('''Use Specify GraphName
+{text_contents}''')
+print(result)
              """
     output_file = "create_schema.py"
 

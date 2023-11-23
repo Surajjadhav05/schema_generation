@@ -54,7 +54,7 @@ if len(gsql_query)>0:
     #if st.button("Accept"):
     text_contents = gsql_query["GSQL_Ouput"]
     output=f"""#Importing libraries
-             import pyTigerGraph as tg
+import pyTigerGraph as tg
 import json
 import pandas as pd
 
